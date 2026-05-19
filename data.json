@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "name": "Manuel Zamora del Cerro",
+    "role": "Cloud & Infrastructure Services Intern",
+    "valueProposition": "Ingeniero enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
+    "resumeLink": "./assets/cv.pdf"
+  },
+  "about": {
+    "bio": "Soy un apasionado de la infraestructura tecnológica, los sistemas operativos y la automatización. Mi objetivo es optimizar los recursos IT y garantizar la continuidad del negocio mediante la implementación de soluciones Cloud robustas y prácticas de Infrastructure as Code (IaC).",
+    "philosophy": "La infraestructura es código. Automatizar lo repetitivo no solo reduce errores humanos, sino que libera tiempo para la innovación y la seguridad proactiva."
+  },
+  "history": {
+    "experience": [
+      {
+        "role": "Cloud and Infrastructure Intern",
+        "company": "Capgemini",
+        "period": "2026 - Presente",
+        "description": "Soporte y despliegue de soluciones de infraestructura cloud, automatización de tareas del sistema y administración de entornos virtualizados.",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1780531200&v=beta&t=rbpaHR58n0gsaQDF6zoof9hX_tjCyGJd024gFbumaLg"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Técnico Superior en Administración de Sistemas Informáticos en Red",
+        "institution": "Salesianos España",
+        "period": "2024 - 2026",
+        "description": "Especialización en sistemas distribuidos, redes corporativas, seguridad informática y gestión de bases de datos.",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1780531200&v=beta&t=PKjs6HG8HNFqzdNVeuroOOXpD9vsk9aXfWYsifm4Hhs"
+      }
+    ]
+  },
+"certifications": {
+    "Cloud_Computing": [
+      {
+        "title": "Microsoft Certified: Azure Fundamentals (AZ-900)",
+        "issuer": "Microsoft",
+        "year": "2025",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/403c8f48-38c5-4715-8507-6a7fdc2acec6",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png"
+      }
+    ],
+    "Networking": [
+      {
+        "title": "CCNA: Introduction to Networks",
+        "issuer": "Cisco",
+        "year": "2024",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/ec62e9c6-b14b-44e5-8e25-cf776f9f26f3",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/f4ccdba9-dd65-4349-baad-8f05df116443/CCNASRWE__1_.png"
+      },
+      {
+        "title": "CCNA: Switching, Routing, and Wireless Essentials",
+        "issuer": "Cisco",
+        "year": "2024",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/10280246-46ca-4351-a8cd-b96bf124dfc2",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png"
+      },
+      {
+        "title": "CCNA: Enterprise Networking, Security, and Automation",
+        "issuer": "Cisco",
+        "year": "2024",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/e8b4ee43-6b2f-4bda-8751-f90d8359085f",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png"
+      }
+    ],
+    "Sistemas_Operativos": [
+      {
+        "title": "Linux Essentials",
+        "issuer": "Cisco",
+        "year": "2026",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/294627a9-e1ed-4a75-af35-efe72c7d168f",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/e8fe3d67-2967-43d0-bc4a-7a268a37f47b/image.png"
+      }
+    ],
+    "Enterprise_Software": [
+      {
+        "title": "SAP Certified - Positioning SAP Business Suite",
+        "issuer": "SAP",
+        "year": "2026",
+        "credentialUrl": "https://www.credly.com/earner/earned/badge/cfa827af-24aa-40c1-a7ba-7c7f6db924b7",
+        "badgeUrl": "https://images.credly.com/size/680x680/images/f95a42fe-5227-403f-bebb-c5b04da1cbf8/blob"
+      }
+    ]
+  },
+  "skills": {
+    "cloud_infrastructure": ["AWS", "Microsoft Azure", "Oracle Cloud", "Linux (RHEL/Ubuntu)", "Windows Server"],
+    "automation_devops": ["Docker", "Kubernetes", "Terraform", "Ansible", "CI/CD"],
+    "networking_scripting": ["Python", "Bash/Shell", "Powershell", "TCP/IP", "VPN/Firewalls"]
+  },
+  "projects": {
+    "python": [
+      {
+        "title": "Script de Monitoreo de Servidores",
+        "description": "Herramienta CLI en Python para recolectar métricas de CPU/RAM de instancias EC2 y enviar alertas por Slack.",
+        "technologies": ["Python", "AWS Boto3", "Linux"],
+        "demoUrl": "#",
+        "repoUrl": "#",
+        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Python+Script"
+      }
+    ],
+    "infra_cloud": [
+      {
+        "title": "Arquitectura HA en Azure",
+        "description": "Despliegue automatizado de una topología de red Hub-and-Spoke en Azure utilizando Terraform.",
+        "technologies": ["Terraform", "Azure", "VNet"],
+        "demoUrl": "#",
+        "repoUrl": "#",
+        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Azure+Infra"
+      }
+    ]
+  },
+  "contact": {
+    "email": "mzdelcerro@gmail.com",
+    "github": "https://github.com/manuzamora01",
+    "linkedin": "www.linkedin.com/in/manuel-zamora-ciber",
+    "twitter": "#"
+  }
+}

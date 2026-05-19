@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal | Portafolio Interactivo</title>
+    <meta name="description" content="Portafolio web profesional de infraestructura, estilo terminal dinámico.">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div id="system-toast" class="toast"></div>
+
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo" id="nav-logo">Dev.</div>
+            
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#certifications">Certificaciones</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+            </ul>
+
+            <div class="header-socials" id="header-socials">
+                </div>
+        </nav>
+    </header>
+
+    <main class="snap-container">
+        <section id="hero" class="snap-section container">
+            <div class="section-content" id="hero-content"></div>
+        </section>
+
+        <section id="about" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Sobre mí</h2>
+                
+                <div class="terminal-tabs">
+                    <button class="tab-btn active" data-tab="tab-bio">cat bio.txt</button>
+                    <button class="tab-btn" data-tab="tab-exp">cat trayectoria.log</button>
+                    <button class="tab-btn" data-tab="tab-edu">cat estudios.cfg</button>
+                </div>
+
+                <div class="terminal-window">
+                    <div id="tab-bio" class="tab-panel active-panel"></div>
+                    <div id="tab-exp" class="tab-panel"></div>
+                    <div id="tab-edu" class="tab-panel"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Certificaciones</h2>
+                <div id="certifications-content" class="content-wrapper"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Stack Técnico</h2>
+                <div id="skills-container" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div id="projects-grid" class="projects-layout"></div>
+                
+                <footer class="footer">
+                    <p>&copy; <span id="current-year"></span> <span id="footer-name"></span>. System.exit(0);</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/main.js" defer></script>
+</body>
+</html>
