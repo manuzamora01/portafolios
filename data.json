@@ -2,7 +2,7 @@
   "hero": {
     "name": "Manuel Zamora del Cerro",
     "role": "Cloud & Infrastructure Intern",
-    "valueProposition": "Administrador de Sistemas Informáticos en Red enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
+    "valueProposition": "Administrador de sistemas enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
     "resumeLink": "./assets/cv.pdf"
   },
   "about": {
@@ -12,24 +12,24 @@
   "history": {
     "experience": [
       {
-        "role": "Cloud and Infrastructure Intern",
+        "role": "Cloud and Infrastructure Services Intern",
         "company": "Capgemini",
         "period": "2026 - Presente",
         "description": "Soporte y despliegue de soluciones de infraestructura cloud, automatización de tareas del sistema y administración de entornos virtualizados.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1780531200&v=beta&t=rbpaHR58n0gsaQDF6zoof9hX_tjCyGJd024gFbumaLg"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1781136000&v=beta&t=sYS4OS3kEjAdFdmAmrmRrVp9o8nj4sj5sXS70F5gl2Y"
       }
     ],
     "education": [
       {
-        "degree": "Técnico Superior en Administración de Sistemas Informáticos en Red",
+        "degree": "Administración de Sistemas Informáticos en Red",
         "institution": "Salesianos España",
         "period": "2024 - 2026",
         "description": "Especialización en sistemas distribuidos, redes corporativas, seguridad informática y gestión de bases de datos.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1780531200&v=beta&t=PKjs6HG8HNFqzdNVeuroOOXpD9vsk9aXfWYsifm4Hhs"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1781136000&v=beta&t=CWezM9ys74pj_htV2-p_ugKmQas8nxueGAOfq-b_FzU"
       }
     ]
   },
-"certifications": {
+  "certifications": {
     "Cloud_Computing": [
       {
         "title": "Microsoft Certified: Azure Fundamentals (AZ-900)",
