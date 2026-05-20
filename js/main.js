@@ -124,16 +124,42 @@ function setupEventListeners() {
 }
 
 function processTextInput(text) {
-    const lowerText = text.toLowerCase();
+    // 1. Normalización de texto: pasamos a minúsculas y eliminamos tildes/acentos
+    const lowerText = text.toLowerCase()
+                          .normalize("NFD")
+                          .replace(/[\u0300-\u036f]/g, "");
+
     let action = 'desconocido';
 
-    if (lowerText.includes('hola') || lowerText.includes('inicio')) action = 'inicio';
-    else if (lowerText.includes('sobre') || lowerText.includes('ti') || lowerText.includes('bio')) action = 'sobre-mi';
-    else if (lowerText.includes('experiencia') || lowerText.includes('trabajo') || lowerText.includes('trayectoria')) action = 'trayectoria';
-    else if (lowerText.includes('estudio') || lowerText.includes('educacion') || lowerText.includes('universidad')) action = 'estudios';
-    else if (lowerText.includes('proyecto')) action = 'proyectos';
-    else if (lowerText.includes('skill') || lowerText.includes('tecnologia') || lowerText.includes('herramienta')) action = 'skills';
-    else if (lowerText.includes('certificacione') || lowerText.includes('titulo')) action = 'certificaciones';
+    // 2. Diccionario de Intenciones (Simulador de NLP)
+    // Añade aquí todos los sinónimos y variaciones que se te ocurran
+    const intents = {
+        'inicio': ['hola', 'buenas', 'inicio', 'empezar', 'menu', 'hello', 'hi', 'hey', 'saludo', 'quien eres', 'que eres'],
+        'sobre-mi': ['sobre ti', 'biografia', 'bio', 'perfil', 'acerca', 'presentacion', 'informacion', 'quien soy', 'conocerte', 'quien es manuel'],
+        'trayectoria': ['experiencia', 'trabajo', 'laboral', 'carrera', 'cv', 'curriculum', 'trabajado', 'puesto', 'intern', 'practicas', 'empresa', 'empleo', 'donde has estado'],
+        'estudios': ['estudio', 'educacion', 'universidad', 'formacion', 'academico', 'titulo', 'grado', 'instituto', 'aprender', 'estudiado', 'fp', 'grado superior'],
+        'proyectos': ['proyecto', 'portfolio', 'portafolio', 'github', 'repo', 'desarrollo', 'creado', 'hecho', 'programado', 'aplicacion', 'app', 'web', 'script', 'codigo'],
+        'skills': ['skill', 'habilidad', 'tecnologia', 'herramienta', 'stack', 'lenguaje', 'aws', 'azure', 'linux', 'python', 'docker', 'kubernetes', 'terraform', 'saber', 'sabes hacer', 'conocimiento', 'tecnica', 'que usas'],
+        'certificaciones': ['certificacion', 'certificado', 'cisco', 'ccna', 'microsoft', 'az-900', 'sap', 'credly', 'diploma', 'credencial', 'examen', 'aprobado', 'badge']
+    };
+
+    // 3. Búsqueda de coincidencias
+    for (const [keyAction, keywords] of Object.entries(intents)) {
+        // Comprobamos si ALGUNA de las palabras clave está dentro de la frase del usuario
+        if (keywords.some(kw => lowerText.includes(kw))) {
+            action = keyAction;
+            break; // Si encontramos una coincidencia, paramos de buscar
+        }
+    }
+
+    // 4. "Truco" de IA Avanzada: Cruce de contextos (Sub-intenciones)
+    // Si el usuario es muy específico, saltamos directamente a las subcategorías
+    if (lowerText.includes('proyecto') && lowerText.includes('python')) action = 'projects_python';
+    if ((lowerText.includes('proyecto') || lowerText.includes('desarrollo')) && (lowerText.includes('cloud') || lowerText.includes('infra'))) action = 'projects_infra_cloud';
+    
+    if (lowerText.includes('certifica') && lowerText.includes('cloud')) action = 'certs_Cloud_Computing';
+    if (lowerText.includes('certifica') && lowerText.includes('redes')) action = 'certs_Networking';
+    if (lowerText.includes('certifica') && lowerText.includes('linux')) action = 'certs_Sistemas_Operativos';
 
     handleUserAction(action, text, false);
 }
