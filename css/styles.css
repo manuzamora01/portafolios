@@ -34,7 +34,6 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 
 .container { width: 90%; max-width: 1100px; margin: 0 auto; position: relative; z-index: 10; }
 
-/* Componente Global de Alertas (Toast) */
 .toast {
     position: fixed; bottom: 20px; right: 20px; background-color: var(--bg-secondary);
     border: 1px solid var(--text-main); color: var(--text-main); padding: 1rem 1.5rem;
@@ -73,7 +72,7 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 .header-socials svg { fill: none !important; stroke: currentColor !important; }
 
 /* =========================================
-   3. ARQUITECTURA DE SECCIONES (SCROLL SNAP)
+   3. ARQUITECTURA DE SECCIONES
    ========================================= */
 .snap-section {
     min-height: 100vh; scroll-snap-align: start; display: flex;
@@ -90,11 +89,13 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 /* =========================================
-   4. COMPONENTES INTERNOS Y MENÚS (ABOUT TABS)
+   4. COMPONENTES INTERNOS
    ========================================= */
 .hero-title { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; text-transform: uppercase; }
 .hero-role { color: var(--text-muted); font-size: 1.6rem; margin-bottom: 1.5rem; }
 .hero-desc { max-width: 650px; font-size: 1.05rem; margin-bottom: 2rem; color: var(--text-muted); }
+
+.hero-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
 
 .btn {
     display: inline-block; padding: 0.7rem 1.4rem; font-weight: bold; cursor: pointer;
@@ -124,15 +125,13 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 .tab-panel.active-panel { display: block; animation: fadeIn 0.3s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Elementos de Historial (Experiencia y Educación) con estructura LinkedIn */
 .history-item { 
     display: flex; gap: 1.5rem; align-items: flex-start; 
     margin-bottom: 2rem; border-bottom: 1px dashed rgba(0, 255, 65, 0.1); padding-bottom: 2rem; 
 }
 .history-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-
 .history-logo { 
-    width: 56px; height: 56px; object-fit: contain; 
+    width: 56px; height: 56px; object-fit: contain; flex-shrink: 0;
     border: 1px solid var(--border-color); background-color: var(--bg-secondary); 
     padding: 0.2rem; filter: grayscale(100%); transition: all var(--transition-speed) ease;
 }
@@ -154,7 +153,7 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 .certs-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 .cert-card { background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 1.2rem; display: flex; align-items: center; gap: 1.2rem; transition: all var(--transition-speed) ease; }
 .cert-card:hover { border-color: var(--text-main); transform: translateX(5px); box-shadow: var(--glow); }
-.cert-badge { width: 75px; height: 75px; object-fit: contain; filter: grayscale(100%) brightness(80%); transition: filter var(--transition-speed); }
+.cert-badge { width: 75px; height: 75px; object-fit: contain; filter: grayscale(100%) brightness(80%); transition: filter var(--transition-speed); flex-shrink: 0; }
 .cert-card:hover .cert-badge { filter: grayscale(0%) brightness(100%); }
 .cert-info { display: flex; flex-direction: column; gap: 0.3rem; }
 .cert-title { font-size: 1.1rem; font-weight: bold; }
@@ -178,19 +177,22 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
 .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
 .tech-tag { font-size: 0.75rem; color: var(--text-muted); }
 .tech-tag::before { content: "#"; }
-.project-links { display: flex; gap: 0.8rem; }
+.project-links { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 
 .footer { padding-top: 2rem; margin-top: 3rem; border-top: 1px dashed var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
 
 /* =========================================
-   6. DISEÑO RESPONSIVO (MEDIA QUERIES)
+   6. DISEÑO RESPONSIVO EXTREMO (MOBILE-FIRST AJUSTES)
    ========================================= */
+
+/* Tablets y Escritorios Pequeños (>= 600px) */
 @media (min-width: 600px) {
     .certs-grid { grid-template-columns: repeat(2, 1fr); }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .projects-layout { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Portátiles y Escritorios Grandes (>= 900px) */
 @media (min-width: 900px) {
     .navbar { padding: 1.5rem 0; }
     .hero-title { font-size: 4rem; }
@@ -200,8 +202,41 @@ a { text-decoration: none; color: inherit; transition: all var(--transition-spee
     .projects-layout { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* MÓVILES Y PANTALLAS PEQUEÑAS (< 768px) */
 @media (max-width: 768px) {
+    .container { width: 92%; }
+    
+    /* Ocultar menú de navegación para ahorrar espacio */
     .nav-links { display: none; }
     .navbar { justify-content: space-between; }
-    .history-item { gap: 1rem; }
+    
+    /* Escalar la tipografía principal */
+    .hero-title { font-size: 2.2rem; }
+    .hero-role { font-size: 1.2rem; }
+    .hero-desc { font-size: 0.95rem; }
+    .section-title { font-size: 1.6rem; margin-bottom: 1.5rem; }
+
+    /* Los botones en la pantalla principal ocuparán todo el ancho */
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+
+    /* Ajuste de Pestañas (Evitar que se salgan por la derecha) */
+    .terminal-tabs { flex-wrap: wrap; gap: 0.3rem; }
+    .tab-btn { flex: 1 1 100%; text-align: center; font-size: 0.85rem; padding: 0.7rem; }
+    .terminal-window { padding: 1.2rem; }
+
+    /* Ajuste del Historial (Colocar logo arriba y texto abajo) */
+    .history-item { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .history-header { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+    
+    /* Ajuste de las tarjetas de Certificaciones (Logo arriba, info abajo) */
+    .cert-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    
+    /* Relajar el Scroll Snap si el contenido de la pantalla es más largo que el dispositivo */
+    .snap-section { height: auto; min-height: 100vh; padding-top: 100px; padding-bottom: 4rem; justify-content: flex-start; }
+}
+
+/* Pantallas extremadamente bajas en altura (Ej: Móvil en horizontal) */
+@media (max-height: 600px) {
+    .snap-section { height: auto; justify-content: flex-start; padding-top: 80px; }
 }
