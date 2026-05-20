@@ -4,7 +4,7 @@ Bienvenido al código fuente de mi portafolio profesional.
 
 Este proyecto no es solo una página web estática, sino una **Single Page Application (SPA)** construida con una arquitectura modular y escalable, diseñada bajo una estética de terminal para reflejar mi enfoque en sistemas, cloud y automatización.
 
-🌐 **[Ver Portafolio en Vivo](https://github.com/manuzamora01/portafolios/)** *(Nota: Actualizaremos este enlace cuando lo despliegues)*
+🌐 **[Ver Portafolio en Vivo]([https://github.com/manuzamora01/portafolios/])** *(Nota: Actualizaremos este enlace cuando lo despliegues)*
 
 ## 🏗️ Arquitectura del Proyecto
 
