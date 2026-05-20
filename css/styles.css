@@ -315,10 +315,17 @@ body {
     border-radius: var(--radius-md); padding: 0.8rem; display: flex; flex-direction: column;
     align-items: center; text-align: center; transition: var(--transition-smooth);
 }
-.chat-card-cert:hover { box-shadow: var(--shadow); border-color: var(--accent); transform: translateY(-3px); }
+/* Añadimos :active para que funcione perfectamente al tocar en móviles */
+.chat-card-cert:hover, 
+.chat-card-cert:active { 
+    box-shadow: var(--shadow); border-color: var(--accent); transform: translateY(-3px); 
+}
 
-/* Añadimos esta línea para que el logo recupere su color original al pasar el ratón */
-.chat-card-cert:hover .chat-logo { filter: grayscale(0%); }
+/* El logo recupera el color al pasar el ratón (PC) o al mantener tocado (Móvil) */
+.chat-card-cert:hover .chat-logo, 
+.chat-card-cert:active .chat-logo { 
+    filter: grayscale(0%); 
+}
 
 .chat-card-cert .chat-logo { width: 40px; height: 40px; margin-bottom: 0.5rem; padding: 0;}
 .chat-card-cert-title { font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem; line-height: 1.2; }
