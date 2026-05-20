@@ -99,21 +99,17 @@ function renderHeaderContact(contact) {
 // ESCUCHA DE EVENTOS (BOTONES Y TEXTO)
 // ==========================================
 function setupEventListeners() {
-    // Botón de nueva conversación superior
     document.getElementById('new-chat-btn').addEventListener('click', iniciarConversacion);
 
-    // Delegación de eventos para todos los botones del chat
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-action]');
         if (btn) {
             const action = btn.getAttribute('data-action');
-            // Limpia los emojis del texto del botón para que el mensaje del usuario sea más limpio
             const text = btn.textContent.replace(/[\u1000-\uFFFF]/g, '').trim(); 
             handleUserAction(action, text);
         }
     });
 
-    // Envío por campo de texto
     const handleSend = () => {
         const text = chatInput.value.trim();
         if (text !== '') {
@@ -131,7 +127,6 @@ function processTextInput(text) {
     const lowerText = text.toLowerCase();
     let action = 'desconocido';
 
-    // Procesamiento básico de palabras clave (NLP Simple)
     if (lowerText.includes('hola') || lowerText.includes('inicio')) action = 'inicio';
     else if (lowerText.includes('sobre') || lowerText.includes('ti') || lowerText.includes('bio')) action = 'sobre-mi';
     else if (lowerText.includes('experiencia') || lowerText.includes('trabajo') || lowerText.includes('trayectoria')) action = 'trayectoria';
@@ -144,20 +139,17 @@ function processTextInput(text) {
 }
 
 // ==========================================
-// MOTOR DE PROCESAMIENTO DEL CHAT (LLM FAKE)
+// MOTOR DE PROCESAMIENTO DEL CHAT
 // ==========================================
 async function handleUserAction(action, userText, isSystemInit = false) {
-    // 1. Mostrar mensaje del usuario
     if (!isSystemInit) {
         appendUserMessage(userText);
-        scrollToBottom();
+        scrollToBottom(); // El usuario escribe y baja el chat para ver que está "pensando"
     }
 
-    // 2. Mostrar indicador de "Escribiendo..."
     const typingId = appendTypingIndicator();
     scrollToBottom();
 
-    // 3. Simular tiempo de respuesta (delay aleatorio)
     const delay = Math.floor(Math.random() * 500) + 500;
     await new Promise(resolve => setTimeout(resolve, delay));
     document.getElementById(typingId).remove();
@@ -176,8 +168,8 @@ async function handleUserAction(action, userText, isSystemInit = false) {
             aiIntroText = `Estos son los proyectos relacionados con **${formattedTopic}**:`;
             aiHtmlContent = buildProjectsVerticalHTML(portfolioData.projects, topic) + menuProyectos;
         }
-        appendAIMessage(aiIntroText, aiHtmlContent);
-        scrollToBottom();
+        const aiMessageElement = appendAIMessage(aiIntroText, aiHtmlContent);
+        scrollToElement(aiMessageElement);
         return;
     }
 
@@ -192,8 +184,8 @@ async function handleUserAction(action, userText, isSystemInit = false) {
             aiIntroText = `Estas son las certificaciones en el área de **${formattedTopic}**:`;
             aiHtmlContent = buildCertificationsHTML(portfolioData.certifications, topic) + menuCertificaciones;
         }
-        appendAIMessage(aiIntroText, aiHtmlContent);
-        scrollToBottom();
+        const aiMessageElement = appendAIMessage(aiIntroText, aiHtmlContent);
+        scrollToElement(aiMessageElement);
         return;
     }
 
@@ -211,7 +203,7 @@ async function handleUserAction(action, userText, isSystemInit = false) {
         
         case 'sobre-mi':
             aiIntroText = "Excelente. ¿Qué aspecto de la trayectoria de Manuel te gustaría conocer?";
-            aiHtmlContent = menuSobreMi; // Inyecta el menú completo
+            aiHtmlContent = menuSobreMi; 
             break;
 
         case 'bio':
@@ -231,7 +223,7 @@ async function handleUserAction(action, userText, isSystemInit = false) {
 
         case 'proyectos':
             aiIntroText = "Manuel ha trabajado en diversas áreas técnicas. ¿Qué tipo de proyectos te interesa explorar?";
-            aiHtmlContent = menuProyectos; // Muestra el menú de categorías
+            aiHtmlContent = menuProyectos; 
             break;
 
         case 'skills':
@@ -241,20 +233,20 @@ async function handleUserAction(action, userText, isSystemInit = false) {
 
         case 'certificaciones':
             aiIntroText = "Cuenta con certificaciones oficiales avaladas por la industria. Selecciona un área:";
-            aiHtmlContent = menuCertificaciones; // Muestra el menú de tópicos
+            aiHtmlContent = menuCertificaciones; 
             break;
 
         default:
             aiIntroText = "No he logrado entender ese comando. Por favor, selecciona una de las opciones sugeridas o escribe comandos como 'proyectos' o 'experiencia'.";
     }
 
-    // 4. Mostrar respuesta final de la IA
-    appendAIMessage(aiIntroText, aiHtmlContent);
-    scrollToBottom();
+    // Mostrar respuesta final de la IA y hacer scroll hacia el inicio de la misma
+    const aiMessageElement = appendAIMessage(aiIntroText, aiHtmlContent);
+    scrollToElement(aiMessageElement);
 }
 
 // ==========================================
-// FUNCIONES DE DIBUJADO EN PANTALLA (UI)
+// FUNCIONES DE DIBUJADO EN PANTALLA Y SCROLL
 // ==========================================
 function appendUserMessage(text) {
     const msgDiv = document.createElement('div');
@@ -285,7 +277,6 @@ function appendAIMessage(introText, htmlContent) {
     const msgDiv = document.createElement('div');
     msgDiv.className = 'message ai-message';
     
-    // Convertir **negritas** de formato markdown a etiquetas HTML <strong>
     const formattedText = introText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
     msgDiv.innerHTML = `
@@ -296,16 +287,24 @@ function appendAIMessage(introText, htmlContent) {
         </div>
     `;
     chatMessagesContainer.appendChild(msgDiv);
+    return msgDiv; // Devolvemos el nodo para poder hacer scroll directamente a él
 }
 
+// Baja hasta el final de todo (Útil para cuando el usuario envía mensaje)
 function scrollToBottom() {
     chatMessagesContainer.scrollTo({ top: chatMessagesContainer.scrollHeight, behavior: 'smooth' });
+}
+
+// Baja hasta el principio del mensaje concreto (Útil para leer respuestas largas)
+function scrollToElement(element) {
+    setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50); // Pequeño delay para asegurar que el DOM ha cargado las tarjetas
 }
 
 // ==========================================
 // CONSTRUCTORES DE HTML (PARSERS DE DATOS)
 // ==========================================
-
 function buildExperienceHTML(arr) {
     if(!arr || !arr.length) return "<p>No hay datos.</p>";
     return arr.map(exp => `
@@ -334,7 +333,6 @@ function buildEducationHTML(arr) {
     `).join('');
 }
 
-// Proyectos en GRID COMPACTO (Verticales, lado a lado)
 function buildProjectsVerticalHTML(projObj, specificTopic) {
     let html = '';
     for (const [cat, list] of Object.entries(projObj)) {
@@ -363,7 +361,6 @@ function buildProjectsVerticalHTML(projObj, specificTopic) {
     return html;
 }
 
-// Ayudante para inyectar iconos en las etiquetas de Skills
 function getTechIcon(techName) {
     const name = techName.toLowerCase();
     if (name.includes('aws') || name.includes('azure') || name.includes('cloud')) return '☁️';
@@ -393,7 +390,6 @@ function buildSkillsHTML(skillsObj) {
     return html;
 }
 
-// Certificaciones en GRID COMPACTO (Lado a lado)
 function buildCertificationsHTML(certsObj, specificTopic) {
     let html = '';
     for (const [topic, list] of Object.entries(certsObj)) {
