@@ -317,6 +317,9 @@ body {
 }
 .chat-card-cert:hover { box-shadow: var(--shadow); border-color: var(--accent); transform: translateY(-3px); }
 
+/* Añadimos esta línea para que el logo recupere su color original al pasar el ratón */
+.chat-card-cert:hover .chat-logo { filter: grayscale(0%); }
+
 .chat-card-cert .chat-logo { width: 40px; height: 40px; margin-bottom: 0.5rem; padding: 0;}
 .chat-card-cert-title { font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem; line-height: 1.2; }
 .chat-card-cert-subtitle { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.6rem; }
