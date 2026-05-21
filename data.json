@@ -87,14 +87,22 @@
     "networking_scripting": ["Python", "Bash/Shell", "Powershell", "TCP/IP", "VPN/Firewalls"]
   },
   "projects": {
-    "python": [
+    "Shell": [
       {
-        "title": "Script de Monitoreo de Servidores",
-        "description": "Herramienta CLI en Python para recolectar métricas de CPU/RAM de instancias EC2 y enviar alertas por Slack.",
-        "technologies": ["Python", "AWS Boto3", "Linux"],
+        "title": "OverTheWire",
+        "description": "Bandit es una plataforma diseñada para aprender los fundamentos de Linux, navegación en sistemas, procesamiento de texto y técnicas básicas de ciberseguridad a través de retos prácticos.",
+        "technologies": ["Shell", "Linux"],
         "demoUrl": "#",
-        "repoUrl": "#",
-        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Python+Script"
+        "repoUrl": "https://github.com/manuzamora01/OverTheWire",
+        "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.PNV_FhV9bF0Py9uJ5kuObQHaBX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      },
+      {
+        "title": "Script DHCP",
+        "description": "ste proyecto implementa un servidor DHCP completo utilizando tecnología de contenedores (Docker) sobre una imagen base de Ubuntu. Incluye un script de automatización avanzado en Bash que permite gestionar el ciclo de vida del servicio tanto mediante un menú interactivo como a través de comandos directos (CLI).",
+        "technologies": ["Shell", "Linux"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/manuzamora01/Script-DHCP",
+        "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.PNV_FhV9bF0Py9uJ5kuObQHaBX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
       }
     ],
     "infra_cloud": [
@@ -103,7 +111,7 @@
         "description": "Despliegue automatizado de una topología de red Hub-and-Spoke en Azure utilizando Terraform.",
         "technologies": ["Terraform", "Azure", "VNet"],
         "demoUrl": "#",
-        "repoUrl": "#",
+        "repoUrl": "https://github.com/manuzamora01/Script-DHCP",
         "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Azure+Infra"
       }
     ]
