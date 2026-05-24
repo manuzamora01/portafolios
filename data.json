@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Manuel Zamora del Cerro",
-    "role": "Cloud & Infrastructure Services Intern",
-    "valueProposition": "Ingeniero enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
+    "role": "Cloud & Infrastructure Intern",
+    "valueProposition": "Administrador de sistemas enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
     "resumeLink": "./assets/cv.pdf"
   },
   "about": {
@@ -12,24 +12,24 @@
   "history": {
     "experience": [
       {
-        "role": "Cloud and Infrastructure Intern",
+        "role": "Cloud and Infrastructure Services Intern",
         "company": "Capgemini",
         "period": "2026 - Presente",
         "description": "Soporte y despliegue de soluciones de infraestructura cloud, automatización de tareas del sistema y administración de entornos virtualizados.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1780531200&v=beta&t=rbpaHR58n0gsaQDF6zoof9hX_tjCyGJd024gFbumaLg"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1781136000&v=beta&t=sYS4OS3kEjAdFdmAmrmRrVp9o8nj4sj5sXS70F5gl2Y"
       }
     ],
     "education": [
       {
-        "degree": "Técnico Superior en Administración de Sistemas Informáticos en Red",
+        "degree": "Administración de Sistemas Informáticos en Red",
         "institution": "Salesianos España",
         "period": "2024 - 2026",
         "description": "Especialización en sistemas distribuidos, redes corporativas, seguridad informática y gestión de bases de datos.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1780531200&v=beta&t=PKjs6HG8HNFqzdNVeuroOOXpD9vsk9aXfWYsifm4Hhs"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1781136000&v=beta&t=CWezM9ys74pj_htV2-p_ugKmQas8nxueGAOfq-b_FzU"
       }
     ]
   },
-"certifications": {
+  "certifications": {
     "Cloud_Computing": [
       {
         "title": "Microsoft Certified: Azure Fundamentals (AZ-900)",
@@ -86,32 +86,100 @@
     "automation_devops": ["Docker", "Kubernetes", "Terraform", "Ansible", "CI/CD"],
     "networking_scripting": ["Python", "Bash/Shell", "Powershell", "TCP/IP", "VPN/Firewalls"]
   },
-  "projects": {
-    "python": [
+"projects": {
+    "infra_sistemas": [
       {
-        "title": "Script de Monitoreo de Servidores",
-        "description": "Herramienta CLI en Python para recolectar métricas de CPU/RAM de instancias EC2 y enviar alertas por Slack.",
-        "technologies": ["Python", "AWS Boto3", "Linux"],
+        "title": "Script-DHCP",
+        "description": "Automatiza el despliegue de un servidor DHCP utilizando Docker y Bash. Permite levantar un entorno de red funcional en segundos sobre una imagen de Ubuntu, gestionando todo el ciclo de vida.",
+        "technologies": ["Bash", "Docker", "Linux", "Networking"],
         "demoUrl": "#",
-        "repoUrl": "#",
-        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Python+Script"
+        "repoUrl": "https://github.com/nuzamora01/Script-DHCP",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=Script+DHCP"
+      },
+      {
+        "title": "JellyPi",
+        "description": "Implementación de un sistema de streaming doméstico utilizando Raspberry Pi. Abarca la configuración de permisos avanzados en Linux para almacenamiento NTFS (fstab) y optimización.",
+        "technologies": ["Linux", "Raspberry Pi", "Bash", "Sistemas"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/JellyPi",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=JellyPi+Media"
       }
     ],
-    "infra_cloud": [
+    "aplicaciones_pwa": [
       {
-        "title": "Arquitectura HA en Azure",
-        "description": "Despliegue automatizado de una topología de red Hub-and-Spoke en Azure utilizando Terraform.",
-        "technologies": ["Terraform", "Azure", "VNet"],
+        "title": "CuentaCal App",
+        "description": "Aplicación móvil inteligente que utiliza Inteligencia Artificial para analizar fotografías de comidas y calcular automáticamente su aporte calórico y nutricional.",
+        "technologies": ["TypeScript", "JavaScript", "AI Integration"],
         "demoUrl": "#",
-        "repoUrl": "#",
-        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Azure+Infra"
+        "repoUrl": "https://github.com/nuzamora01/cuentacal-app",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=CuentaCal+AI"
+      },
+      {
+        "title": "Futsal Pro App",
+        "description": "PWA para entrenadores de fútbol sala que automatiza el envío de convocatorias por WhatsApp y calcula rotaciones de 'Fair Play' mediante un algoritmo táctico inteligente.",
+        "technologies": ["HTML", "CSS", "JavaScript", "PWA"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/futsalproapp",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=Futsal+Pro"
+      },
+      {
+        "title": "PractiTrack",
+        "description": "Gestor de apuntes profesional para estudiantes en prácticas con soporte PWA y Markdown, optimizado para la documentación rápida.",
+        "technologies": ["JavaScript", "HTML", "CSS", "PWA"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/PractiTrack",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=PractiTrack"
+      },
+      {
+        "title": "CookApp",
+        "description": "Red social en formato App/Web móvil diseñada para que los usuarios puedan compartir recetas, interactuar y descubrir nuevos platos.",
+        "technologies": ["JavaScript", "HTML", "CSS"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/cookapp",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=CookApp+Social"
+      }
+    ],
+    "desarrollo_web": [
+      {
+        "title": "ShellCraft Academy",
+        "description": "Plataforma centralizada con estética hacker/terminal para el aprendizaje en ciberseguridad, redes, sistemas y programación con temarios estructurados.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/shellcraft-academy",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=ShellCraft+Academy"
+      },
+      {
+        "title": "Web TipsAcademy F.C.",
+        "description": "Web oficial de un club de fútbol sala centrado en el aprendizaje, la diversión y el desarrollo formativo.",
+        "technologies": ["HTML", "CSS"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/Web-TipsAcademyFC",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=Web+TipsAcademy"
+      },
+      {
+        "title": "App TipsAcademy F.C.",
+        "description": "Versión orientada a dispositivos móviles para complementar la experiencia y gestión del club Tips Academy.",
+        "technologies": ["HTML", "CSS"],
+        "demoUrl": "#",
+        "repoUrl": "https://github.com/nuzamora01/APP-TipsAcademyFC",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=App+TipsAcademy"
+      }
+    ],
+    "ciberseguridad": [
+      {
+        "title": "CTF Writeups & Labs",
+        "description": "Cuaderno de bitácora técnico con la documentación detallada y resolución de retos de hacking ético (Bandit, PicoCTF).",
+        "technologies": ["Markdown", "Docsify", "Linux", "Bash"],
+        "demoUrl": "https://nuzamora01.github.io/hacking-notebook/",
+        "repoUrl": "https://github.com/nuzamora01/hacking-notebook",
+        "imageUrl": "https://via.placeholder.com/600x400/432323/E0D9D9?text=Cybersecurity+Labs"
       }
     ]
   },
   "contact": {
     "email": "mzdelcerro@gmail.com",
     "github": "https://github.com/manuzamora01",
-    "linkedin": "www.linkedin.com/in/manuel-zamora-ciber",
+    "linkedin": "https://www.linkedin.com/in/manuel-zamora-ciber/",
     "twitter": "#"
   }
 }
