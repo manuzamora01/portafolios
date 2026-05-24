@@ -3,44 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuel AI | Asistente de Infraestructura</title>
+    <title>Terminal | Portafolio Interactivo</title>
+    <meta name="description" content="Portafolio web profesional de infraestructura, estilo terminal dinámico.">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="top-header">
-            <div class="header-logo">
-                <span class="logo-text">MZ_OS // AI</span>
-            </div>
-            <div class="header-actions">
-                <div id="header-contact" class="header-contact"></div>
-                <button id="new-chat-btn" class="icon-btn" title="Nueva conversación">🔄</button>
-                <button id="theme-toggle" class="icon-btn" title="Cambiar tema">🌓</button>
-            </div>
-        </header>
+    <div id="system-toast" class="toast"></div>
 
-        <main class="chat-main">
-            <div class="chat-messages" id="chat-messages">
-                </div>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo" id="nav-logo">Dev.</div>
+            
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#certifications">Certificaciones</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+            </ul>
 
-            <div class="chat-input-area">
-                <div class="suggestions" id="suggestions">
-                    <button class="suggestion-btn" data-action="inicio">🏠 Inicio</button>
-                    <button class="suggestion-btn" data-action="sobre-mi">👤 Sobre mí</button>
-                    <button class="suggestion-btn" data-action="certificaciones">📜 Certificaciones</button>
-                    <button class="suggestion-btn" data-action="proyectos">🚀 Proyectos</button>
-                    <button class="suggestion-btn" data-action="skills">🛠️ Skills</button>
+            <div class="header-socials" id="header-socials">
                 </div>
+        </nav>
+    </header>
+
+    <main class="snap-container">
+        <section id="hero" class="snap-section container">
+            <div class="section-content" id="hero-content"></div>
+        </section>
+
+        <section id="about" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Sobre mí</h2>
                 
-                <div class="input-container">
-                    <input type="text" id="chat-input" class="chat-input" placeholder="Escribe un comando o selecciona una opción..." autocomplete="off">
-                    <button id="send-btn" class="send-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    </button>
+                <div class="terminal-tabs">
+                    <button class="tab-btn active" data-tab="tab-bio">cat bio.txt</button>
+                    <button class="tab-btn" data-tab="tab-exp">cat trayectoria.log</button>
+                    <button class="tab-btn" data-tab="tab-edu">cat estudios.cfg</button>
+                </div>
+
+                <div class="terminal-window">
+                    <div id="tab-bio" class="tab-panel active-panel"></div>
+                    <div id="tab-exp" class="tab-panel"></div>
+                    <div id="tab-edu" class="tab-panel"></div>
                 </div>
             </div>
-        </main>
-    </div>
+        </section>
+
+        <section id="certifications" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Certificaciones</h2>
+                <div id="certifications-content" class="content-wrapper"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Stack Técnico</h2>
+                <div id="skills-container" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="snap-section container">
+            <div class="section-content">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div id="projects-grid" class="projects-layout"></div>
+                
+                <footer class="footer">
+                    <p>&copy; <span id="current-year"></span> <span id="footer-name"></span>. System.exit(0);</p>
+                </footer>
+            </div>
+        </section>
+    </main>
 
     <script src="./js/main.js" defer></script>
 </body>

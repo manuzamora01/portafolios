@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Manuel Zamora del Cerro",
-    "role": "Cloud & Infrastructure Intern",
-    "valueProposition": "Administrador de sistemas enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
+    "role": "Cloud & Infrastructure Services Intern",
+    "valueProposition": "Ingeniero enfocado en el diseño, despliegue y mantenimiento de arquitecturas escalables, seguras y altamente disponibles en entornos multi-cloud y on-premise.",
     "resumeLink": "./assets/cv.pdf"
   },
   "about": {
@@ -12,24 +12,24 @@
   "history": {
     "experience": [
       {
-        "role": "Cloud and Infrastructure Services Intern",
+        "role": "Cloud and Infrastructure Intern",
         "company": "Capgemini",
         "period": "2026 - Presente",
         "description": "Soporte y despliegue de soluciones de infraestructura cloud, automatización de tareas del sistema y administración de entornos virtualizados.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1781136000&v=beta&t=sYS4OS3kEjAdFdmAmrmRrVp9o8nj4sj5sXS70F5gl2Y"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHIL3HctxNfvg/company-logo_100_100/B4EZokv7VQIUAQ-/0/1761553135376/capgemini_logo?e=1780531200&v=beta&t=rbpaHR58n0gsaQDF6zoof9hX_tjCyGJd024gFbumaLg"
       }
     ],
     "education": [
       {
-        "degree": "Administración de Sistemas Informáticos en Red",
+        "degree": "Técnico Superior en Administración de Sistemas Informáticos en Red",
         "institution": "Salesianos España",
         "period": "2024 - 2026",
         "description": "Especialización en sistemas distribuidos, redes corporativas, seguridad informática y gestión de bases de datos.",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1781136000&v=beta&t=CWezM9ys74pj_htV2-p_ugKmQas8nxueGAOfq-b_FzU"
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHwkaOfGs7PQw/company-logo_100_100/company-logo_100_100/0/1631304071151?e=1780531200&v=beta&t=PKjs6HG8HNFqzdNVeuroOOXpD9vsk9aXfWYsifm4Hhs"
       }
     ]
   },
-  "certifications": {
+"certifications": {
     "Cloud_Computing": [
       {
         "title": "Microsoft Certified: Azure Fundamentals (AZ-900)",
@@ -87,22 +87,14 @@
     "networking_scripting": ["Python", "Bash/Shell", "Powershell", "TCP/IP", "VPN/Firewalls"]
   },
   "projects": {
-    "Shell": [
+    "python": [
       {
-        "title": "OverTheWire",
-        "description": "Bandit es una plataforma diseñada para aprender los fundamentos de Linux, navegación en sistemas, procesamiento de texto y técnicas básicas de ciberseguridad a través de retos prácticos.",
-        "technologies": ["Shell", "Linux"],
+        "title": "Script de Monitoreo de Servidores",
+        "description": "Herramienta CLI en Python para recolectar métricas de CPU/RAM de instancias EC2 y enviar alertas por Slack.",
+        "technologies": ["Python", "AWS Boto3", "Linux"],
         "demoUrl": "#",
-        "repoUrl": "https://github.com/manuzamora01/OverTheWire",
-        "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.PNV_FhV9bF0Py9uJ5kuObQHaBX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-      },
-      {
-        "title": "Script DHCP",
-        "description": "ste proyecto implementa un servidor DHCP completo utilizando tecnología de contenedores (Docker) sobre una imagen base de Ubuntu. Incluye un script de automatización avanzado en Bash que permite gestionar el ciclo de vida del servicio tanto mediante un menú interactivo como a través de comandos directos (CLI).",
-        "technologies": ["Shell", "Linux"],
-        "demoUrl": "#",
-        "repoUrl": "https://github.com/manuzamora01/Script-DHCP",
-        "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.PNV_FhV9bF0Py9uJ5kuObQHaBX?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+        "repoUrl": "#",
+        "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Python+Script"
       }
     ],
     "infra_cloud": [
@@ -111,7 +103,7 @@
         "description": "Despliegue automatizado de una topología de red Hub-and-Spoke en Azure utilizando Terraform.",
         "technologies": ["Terraform", "Azure", "VNet"],
         "demoUrl": "#",
-        "repoUrl": "https://github.com/manuzamora01/Script-DHCP",
+        "repoUrl": "#",
         "imageUrl": "https://via.placeholder.com/600x400/050505/00ff41?text=Azure+Infra"
       }
     ]
